@@ -1,0 +1,30 @@
+# 3ds Max Wavefront OBJ-Export v0.97b - (c)2007 guruware
+# Datei erstellt: 30.11.2011 15:44:05
+
+newmtl 04___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka truck.png
+	map_Kd truck.png
+
+newmtl 04___Default2
+	Ns 10.0000
+	Ni 1.5000
+	d 0.1000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka truck.png
+	map_Kd truck.png

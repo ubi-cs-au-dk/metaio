@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>metaio SDK Tutorial - Visual Search</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div class="nav-header">
+		<a href="index.html" class="button back-button" onclick="history.go(-1);return false;">
+			<img src="images/arrow_back.png"/>
+			Back
+		</a>
+		<div style="clear: both"></div>
+	</div>
+
+	<div class="content">
+		<div class="tutorial-heading">
+			<div><img alt="Tutorial Visual Search" src="images/tutorial_VisualSearch.png"></div>
+			<h1>Visual Search</h1>
+		</div>
+
+		<div class="start-buttons">
+			<a href="metaioSDKExample:///?startTutorialID=VisualSearch" class="button">
+				Start
+			</a>
+			<a href="metaioSDKExampleAREL:///?startTutorialID=VisualSearch" class="button">
+				Start AREL
+			</a>
+		</div>
+
+		<div class="separator"></div>
+
+		<h2>Introduction</h2>
+		<p>
+			This example shows how to perform visual search with metaio SDK that is
+			based on the metaio visual search server. Simply put, all the heavy
+			lifting is handled on the server side, which alleviates the burden of
+			user devices. On the client side, camera images are sent to the server
+			in an attempt to find a match. The server responds with the visual
+			search result, which provides the tracking information and the filename
+			of the image if visual search is successful, or an error message if it
+			fails.
+		</p>
+
+		<h2>Learn</h2>
+		<ul>
+			<li>Request a visual search</li>
+			<li>Register visual search callback to monitor the status of visual search and perform tracking if successful</li>
+		</ul>
+
+		<h2>Key methods</h2>
+		<ul>
+			<li>requestVisualSearch()</li>
+			<li>registerVisualSearchCallback()</li>
+			<li>onVisualSearchResult()</li>
+			<li>onVisualSearchStatusChanged()</li>
+		</ul>
+
+		<h2>Explanations</h2>
+		<p>Please read the full article explaining this tutorial:</p>
+		<p class="center-on-mobile"><a class="button big-button" href="http://dev.metaio.com/sdk/tutorials/visual-search/">Open</a></p>
+	</div>
+</body>
+</html>

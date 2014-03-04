@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>metaio SDK Tutorial - Interactive Furniture</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div class="nav-header">
+		<a href="index.html" class="button back-button" onclick="history.go(-1);return false;">
+			<img src="images/arrow_back.png"/>
+			Back
+		</a>
+		<div style="clear: both"></div>
+	</div>
+
+	<div class="content">
+		<div class="tutorial-heading">
+			<div><img alt="Tutorial Interactive Furniture" src="images/tutorial_InteractiveFurniture.png"></div>
+			<h1>Interactive Furniture</h1>
+		</div>
+
+		<div class="start-buttons">
+			<a href="metaioSDKExample:///?startTutorialID=InteractiveFurniture" class="button">
+				Start
+			</a>
+			<a href="metaioSDKExampleAREL:///?startTutorialID=InteractiveFurniture" class="button">
+				Start AREL
+			</a>
+		</div>
+
+		<div class="separator"></div>
+
+		<h2>Introduction</h2>
+		<p>
+			This example shows how to incorporate different 3D models and movie
+			texture for tracking. Using GPS tracking configuration, this tutorial
+			negates the necessity of a tracking pattern. The user can take a
+			picture and set it as the tracking pattern for the second stage –
+			dummy tracking. In this setting, the user can put 3D models onto the
+			picture taken. 3 gestures have been included and enabled in this
+			tutorial, namely the drag, pinch and rotation gesture. A screenshot can
+			also be saved by pressing a button.
+		</p>
+
+		<h2>Learn</h2>
+		<ul>
+			<li>Use GPS tracking and set the coordinate offset</li>
+			<li>Load geometries and assign them to different groups for gesture handling</li>
+			<li>Comprehensive gesture control of 3D geometries</li>
+			<li>Save screenshot and reactivate the camera for tracking</li>
+		</ul>
+
+		<h2>Key methods</h2>
+		<ul>
+			<li>requestCameraImage()</li>
+			<li>onCameraImageSaved()</li>
+			<li>startCamera()</li>
+			<li>setImage()</li>
+			<li>requestScreenshot()</li>
+			<li>onScreenshotSaved()</li>
+		</ul>
+
+		<h2>Explanations</h2>
+		<p>Please read the full article explaining this tutorial:</p>
+		<p class="center-on-mobile"><a class="button big-button" href="http://dev.metaio.com/sdk/tutorials/interactive-furniture/">Open</a></p>
+	</div>
+</body>
+</html>

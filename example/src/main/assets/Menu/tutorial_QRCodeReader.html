@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>metaio SDK Tutorial - QR Code Reader</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div class="nav-header">
+		<a href="index.html" class="button back-button" onclick="history.go(-1);return false;">
+			<img src="images/arrow_back.png"/>
+			Back
+		</a>
+		<div style="clear: both"></div>
+	</div>
+
+	<div class="content">
+		<div class="tutorial-heading">
+			<div><img alt="Tutorial QR Code Reader" src="images/tutorial_QRCodeReader.png"></div>
+			<h1>QR Code Reader</h1>
+		</div>
+
+		<div class="start-buttons">
+			<a href="metaioSDKExample:///?startTutorialID=QRCodeReader" class="button">
+				Start
+			</a>
+			<a href="metaioSDKExampleAREL:///?startTutorialID=QRCodeReader" class="button">
+				Start AREL
+			</a>
+		</div>
+
+		<div class="separator"></div>
+
+		<h2>Learn</h2>
+		<p>How to implement QR Code reader</p>
+
+		<h2>Key methods</h2>
+		<ul>
+			<li>IMetaioSDK::setTrackingConfiguration()</li>
+			<li>IMetaioSDKCallback::onTrackingEvent()</li>
+			<li>TrackingValues::getAdditionalValues()</li>
+		</ul>
+
+		<h2>Explanations</h2>
+		<p>Please read the full article explaining this tutorial:</p>
+		<p class="center-on-mobile"><a class="button big-button" href="http://dev.metaio.com/sdk/tutorials/qr-code-reader/">Open</a></p>
+	</div>
+</body>
+</html>

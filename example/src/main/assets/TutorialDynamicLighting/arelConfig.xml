@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+	<trackingdata channel="0" poiprefix="extpoi-124906-" url="Assets/TrackingData_MarkerlessFast.xml" />
+	<apilevel>13</apilevel>
+	<arel>arelTutorial.html</arel>
+	<object id="extpoi-0-1" channel="0">
+		<assets3d>
+			<model>Assets/cube_50mm.obj</model>
+			<properties>
+				<coordinatesystemid>1</coordinatesystemid>
+			</properties>
+		</assets3d>
+	</object>
+</results>

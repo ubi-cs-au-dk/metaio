@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+	<trackingdata channel="0" poiprefix="extpoi-124906-" url="Assets/TrackingData_MarkerlessFast.xml" />
+	<apilevel>7</apilevel>
+	<arel>arelTutorial.html</arel>
+	<SceneOptions>
+		<SceneOption key="EnvironmentMap">
+			Assets/env_map.zip
+		</SceneOption>
+	</SceneOptions>
+</results>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutRotated"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:padding="8dp" >
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+        <!-- Thumbnail Image -->
+        <com.metaio.cloud.plugin.view.RemoteImageView
+            android:id="@+id/imagePOIThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_placeholder" />
+        <com.metaio.cloud.plugin.view.ScalableTextView
+            android:id="@+id/textPOIName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_toRightOf="@id/imagePOIThumbnail"
+            android:ellipsize="end"
+            android:hint="@string/LBL_UNTITLED"
+            android:inputType="text|textMultiLine|textNoSuggestions"
+            android:lines="2"
+            android:maxLines="2"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+        <!-- Compass -->
+        <RatingBar
+            android:id="@+id/ratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/textPOIName"
+            android:layout_below="@+id/textPOIName"
+            android:isIndicator="true"
+            android:max="5"
+            android:maxHeight="0dip"
+            android:minHeight="25dip"
+            android:numStars="5"
+            android:progressDrawable="@drawable/rating_drawable" />
+        <TextView
+            android:id="@+id/textPOILocation"
+            style="@android:style/TextAppearance.Small"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imagePOIThumbnail"
+            android:layout_toLeftOf="@+id/imageAttribution"
+            android:layout_toRightOf="@id/imagePOIThumbnail"
+            android:gravity="center_vertical"
+            android:singleLine="true" />
+        <com.metaio.cloud.plugin.view.RemoteImageView
+            android:id="@+id/imageAttribution"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignBottom="@+id/imagePOIThumbnail"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@null" />
+        <!-- POI description -->
+        <TextView
+            android:id="@+id/textPOIDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/imagePOIThumbnail"
+            android:layout_marginLeft="2dp"
+            android:gravity="start"
+            android:scrollbars="vertical"
+            android:textAppearance="@android:style/TextAppearance.Medium" >
+        </TextView>
+    </RelativeLayout>
+    <!-- Action Buttons -->
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1" >
+    </ListView>
+</LinearLayout>

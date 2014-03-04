@@ -1,0 +1,238 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ccc;
+	color: #333;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+a span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+a img {
+	border: 0;
+}
+
+h1 {
+	margin-bottom: 0.25em;
+	font-size: 1.8em
+}
+
+h2 {
+	margin-top: 0.75em;
+	margin-bottom: 0.25em;
+}
+
+.content {
+	padding: 0 0.8em 1.5em 0.8em;
+}
+
+.content p, .content ul {
+	color: #444;
+}
+.content p {
+	text-align: justify
+}
+
+.metaio-logo > h1 {
+	float: left;
+	margin-top: 10pt;
+}
+.metaio-logo > a {
+	display: inline-block;
+	float: right;
+	margin-top: 10pt;
+}
+.metaio-logo > a img {
+	height: 3em;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #444;
+}
+a:hover, a:active {
+	text-decoration: none;
+	color: #123f74;
+}
+
+ul.tutorials-list {
+	list-style-type: none;
+	box-sizing: border-box;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+ul.tutorials-list > li {
+	display: block;
+	background-color: #fdfdfd;
+	padding: 0.3em;
+	border-radius: 0.25em;
+	border: 0.125em solid gray;
+	margin-bottom: 0.3em;
+	transition: 0.1s; /* for background-color */
+}
+ul.tutorials-list > li:hover {
+	background-color: #f0f0f0;
+}
+
+ul.tutorials-list > li img {
+	vertical-align: middle;
+	margin-right: 0.5em;
+	height: 4em;
+}
+
+ul.tutorials-list > li > div {
+	background-image: url('images/arrow.png');
+	background-repeat: no-repeat;
+	background-position: 100% center;
+}
+
+ul.tutorials-list > li > div > a {
+	display: table;
+	font-size: 1.05em;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+div.separator {
+	height: 1px;
+	margin: 0.5em 0 1em 0;
+	border-bottom: 0.15em solid gray;
+	border-radius: 1em;
+}
+
+/* Tutorial pages BEGIN */
+
+.button {
+	display: inline-block;
+	background-color: #fdfdfd;
+	padding: 0.3em;
+	border-radius: 0.25em;
+	border: 0.125em solid gray;
+	transition: 0.1s; /* for background-color */
+	text-align: center;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+.button:hover {
+	background-color: #eee;
+}
+.button:active {
+	background-color: #bbb;
+}
+
+/* Additional theme for .button */
+.back-button {
+	color: #aaa !important;
+	font-weight: bold;
+	background-color: #000;
+	border: 0.125em solid #777;
+	padding-left: 0.65em;
+	padding-right: 0.8em;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+.back-button:hover {
+	background-color: #333 !important;
+	color: #ddd !important;
+}
+.back-button:active {
+	background-color: #777 !important;
+	color: #ddd !important;
+}
+
+.nav-header {
+	background-color: black;
+	display: block;
+	width: 100%;
+	margin: 0 0 1em 0;
+	padding: 0.5em;
+	box-sizing: border-box;
+	color: #aaa
+}
+
+.nav-header > h1 {
+	display: inline-block;
+	float: right;
+	font-size: 1.5em;
+	margin: 0.2em 0.1em 0.2em 0;
+	vertical-align: middle;
+}
+
+/* Back button */
+.nav-header > a {
+	vertical-align: middle;
+}
+.nav-header img {
+	vertical-align: middle;
+	height: 1.6em;
+}
+
+.tutorial-heading {
+	margin-bottom: 1em;
+	display: table;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 0.2em 0;
+	border-collapse: separate;
+	table-layout: fixed;
+}
+
+.tutorial-heading > div {
+	display: table-cell;
+	vertical-align: middle;
+	/* Need a separate div around the img to make fixed column width work */
+	width: 7em;
+}
+
+.tutorial-heading > div > img {
+	border-radius: 0.2em;
+	width: 100%;
+}
+
+.tutorial-heading > h1 {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 0.4em
+}
+
+.start-buttons {
+	display: table;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 0.5em;
+	border-collapse: separate
+}
+
+.start-buttons > .button {
+	width: 50%;
+	font-weight: bold;
+	font-size: 1.5em;
+	border-radius: 0.5em;
+	display: table-cell;
+	vertical-align: middle
+}
+
+.big-button {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding-left: 1em;
+	padding-right: 1em
+}
+
+p.center-on-mobile {
+	text-align: left
+}
+
+@media all and (max-width: 599px) {
+	p.center-on-mobile {
+		text-align: center
+	}
+}
+
+/* Tutorial pages END */

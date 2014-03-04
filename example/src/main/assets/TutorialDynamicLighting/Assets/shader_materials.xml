@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShaderMaterials>
+	<ShaderMaterial name="tutorial10">
+		<Type>
+			<!-- Because metaio man has texture with alpha channel (below his feet) -->
+			transparent
+		</Type>
+		<Pass>
+			<VertexShader filename="vert.glsl" />
+			<FragmentShader filename="frag.glsl" />
+		</Pass>
+	</ShaderMaterial>
+</ShaderMaterials>
