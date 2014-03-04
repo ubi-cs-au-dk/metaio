@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--    Example tracking configuration file for using marker-based tracking.
+<?xml version="1.0"?><!--    Example tracking configuration file for using marker-based tracking.
         Marker tracking is the detection of markers in a camera image and
         the estimation of the camera position with respect to these markers.
         Markers, in contrast to natural features, are easy to detect with high
@@ -117,110 +116,110 @@
             </SensorCOS>
 
 
-			<SensorCOS>
-				<SensorCosID>Marker2</SensorCosID>
-				<Parameters>
-					<MarkerParameters>
-						<Size>60</Size>
-						<MatrixID>2</MatrixID>
-					</MarkerParameters>
-				</Parameters>
-			</SensorCOS>
+            <SensorCOS>
+                <SensorCosID>Marker2</SensorCosID>
+                <Parameters>
+                    <MarkerParameters>
+                        <Size>60</Size>
+                        <MatrixID>2</MatrixID>
+                    </MarkerParameters>
+                </Parameters>
+            </SensorCOS>
 
-		</Sensor>
-	</Sensors>
-	<Connections>
+        </Sensor>
+    </Sensors>
+    <Connections>
 
-		<COS>
-			<Name>COS1</Name>
-			<Fuser type="SmoothingFuser">
-				<Parameters>
-					<!-- Alpha is in the range [0...1] and determines how strong a new pose is.
-				  alpha = 0.9: less smoothing
-				  alpha = 0.1: alot smoothing-->
-					<AlphaRotation>0.5</AlphaRotation> 
-					<AlphaTranslation>0.8</AlphaTranslation>
-					<!-- if we lose tracking, keep the old pose for several frames -->
-					<KeepPoseForNumberOfFrames>3</KeepPoseForNumberOfFrames> 
-				</Parameters>
-			</Fuser>
-			<SensorSource trigger="1">
-				<SensorID>Markertracking1</SensorID>
-				<SensorCosID>Marker1</SensorCosID>
-				<HandEyeCalibration>
-					<TranslationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-					</TranslationOffset>
-					<RotationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-						<w>1</w>
-					</RotationOffset>
-				</HandEyeCalibration>
-				<COSOffset>
-					<TranslationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-					</TranslationOffset>
-					<RotationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-						<w>1</w>
-					</RotationOffset>
-				</COSOffset>
-			</SensorSource>
-		</COS>
+        <COS>
+            <Name>COS1</Name>
+            <Fuser type="SmoothingFuser">
+                <Parameters>
+                    <!-- Alpha is in the range [0...1] and determines how strong a new pose is.
+                  alpha = 0.9: less smoothing
+                  alpha = 0.1: alot smoothing-->
+                    <AlphaRotation>0.5</AlphaRotation>
+                    <AlphaTranslation>0.8</AlphaTranslation>
+                    <!-- if we lose tracking, keep the old pose for several frames -->
+                    <KeepPoseForNumberOfFrames>3</KeepPoseForNumberOfFrames>
+                </Parameters>
+            </Fuser>
+            <SensorSource trigger="1">
+                <SensorID>Markertracking1</SensorID>
+                <SensorCosID>Marker1</SensorCosID>
+                <HandEyeCalibration>
+                    <TranslationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <w>1</w>
+                    </RotationOffset>
+                </HandEyeCalibration>
+                <COSOffset>
+                    <TranslationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <w>1</w>
+                    </RotationOffset>
+                </COSOffset>
+            </SensorSource>
+        </COS>
 
 
-		<COS>
-			<Name>COS2</Name>
-			<Fuser type="SmoothingFuser">
-				<Parameters>
-					<!-- Alpha is in the range [0...1] and determines how strong a new pose is.
-				  alpha = 0.9: less smoothing
-				  alpha = 0.1: alot smoothing-->
-					<AlphaRotation>0.5</AlphaRotation> 
-					<AlphaTranslation>0.8</AlphaTranslation>
-					<!-- if we lose tracking, keep the old pose for several frames -->
-					<KeepPoseForNumberOfFrames>3</KeepPoseForNumberOfFrames>
-				</Parameters>
-			</Fuser>
-			<SensorSource trigger="1">
-				<SensorID>Markertracking1</SensorID>
-				<SensorCosID>Marker2</SensorCosID>
-				<HandEyeCalibration>
-					<TranslationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-					</TranslationOffset>
-					<RotationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-						<w>1</w>
-					</RotationOffset>
-				</HandEyeCalibration>
-				<COSOffset>
-					<TranslationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-					</TranslationOffset>
-					<RotationOffset>
-						<x>0</x>
-						<y>0</y>
-						<z>0</z>
-						<w>1</w>
-					</RotationOffset>
-				</COSOffset>
-			</SensorSource>
-		</COS>
+        <COS>
+            <Name>COS2</Name>
+            <Fuser type="SmoothingFuser">
+                <Parameters>
+                    <!-- Alpha is in the range [0...1] and determines how strong a new pose is.
+                  alpha = 0.9: less smoothing
+                  alpha = 0.1: alot smoothing-->
+                    <AlphaRotation>0.5</AlphaRotation>
+                    <AlphaTranslation>0.8</AlphaTranslation>
+                    <!-- if we lose tracking, keep the old pose for several frames -->
+                    <KeepPoseForNumberOfFrames>3</KeepPoseForNumberOfFrames>
+                </Parameters>
+            </Fuser>
+            <SensorSource trigger="1">
+                <SensorID>Markertracking1</SensorID>
+                <SensorCosID>Marker2</SensorCosID>
+                <HandEyeCalibration>
+                    <TranslationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <w>1</w>
+                    </RotationOffset>
+                </HandEyeCalibration>
+                <COSOffset>
+                    <TranslationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <w>1</w>
+                    </RotationOffset>
+                </COSOffset>
+            </SensorSource>
+        </COS>
 
-	</Connections>
+    </Connections>
 </TrackingData>

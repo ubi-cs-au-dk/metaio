@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--    Example tracking configuration file for using marker-based tracking.
+<?xml version="1.0"?><!--    Example tracking configuration file for using marker-based tracking.
         Marker tracking is the detection of markers in a camera image and
         the estimation of the camera position with respect to these markers.
         Markers, in contrast to natural features, are easy to detect with high
@@ -76,7 +75,7 @@
 
                 </MarkerTrackingParameters>
             </Parameters>
-            
+
             <!--    Example configuration of a rectangular image is using an 
 					image to identify the marker.
                     - The marker can be rectangular and not just square 
@@ -85,8 +84,8 @@
                     clear rectangular contour, which can be distinguished from 
                     the background. -->
             <SensorCOS>
-			
-				<!--    ID string for uniquely identifying the marker. This ID 
+
+                <!--    ID string for uniquely identifying the marker. This ID
                         string must not be assigned to another marker. -->
                 <SensorCosID>Marker1</SensorCosID>
                 <Parameters>
@@ -110,21 +109,23 @@
                                 their values. It is advised to set these 
                                 attributes to augment the image independently 
                                 of the reference image resolution. -->
-                        <referenceImage qualityThreshold="0.70">glue_picture_marker_2.png</referenceImage>
+                        <referenceImage qualityThreshold="0.70">glue_picture_marker_2.png
+                        </referenceImage>
                     </MarkerParameters>
                 </Parameters>
             </SensorCOS>
-            
+
             <SensorCOS>
                 <SensorCosID>Marker2</SensorCosID>
                 <Parameters>
-				    <Size>300</Size>
+                    <Size>300</Size>
                     <MarkerParameters>
-                        <referenceImage qualityThreshold="0.70">glue_picture_marker_5.png</referenceImage>
+                        <referenceImage qualityThreshold="0.70">glue_picture_marker_5.png
+                        </referenceImage>
                     </MarkerParameters>
                 </Parameters>
             </SensorCOS>
-            
+
         </Sensor>
     </Sensors>
 </TrackingData>

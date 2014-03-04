@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="8dp" >
+    android:padding="8dp">
+
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
         <!-- Thumbnail Image -->
         <com.metaio.cloud.plugin.view.RemoteImageView
             android:id="@+id/imagePOIThumbnail"
@@ -20,6 +21,7 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/icon_placeholder" />
+
         <com.metaio.cloud.plugin.view.ScalableTextView
             android:id="@+id/textPOIName"
             android:layout_width="fill_parent"
@@ -45,6 +47,7 @@
             android:minHeight="25dip"
             android:numStars="5"
             android:progressDrawable="@drawable/rating_drawable" />
+
         <TextView
             android:id="@+id/textPOILocation"
             style="@android:style/TextAppearance.Small"
@@ -55,6 +58,7 @@
             android:layout_toRightOf="@id/imagePOIThumbnail"
             android:gravity="center_vertical"
             android:singleLine="true" />
+
         <com.metaio.cloud.plugin.view.RemoteImageView
             android:id="@+id/imageAttribution"
             android:layout_width="16dp"
@@ -74,12 +78,10 @@
         android:gravity="start"
         android:maxLines="20"
         android:scrollbars="vertical"
-        android:textAppearance="@android:style/TextAppearance.Medium" >
-    </TextView>
+        android:textAppearance="@android:style/TextAppearance.Medium"></TextView>
     <!-- Action Buttons -->
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </ListView>
+        android:layout_height="match_parent"></ListView>
 </LinearLayout>

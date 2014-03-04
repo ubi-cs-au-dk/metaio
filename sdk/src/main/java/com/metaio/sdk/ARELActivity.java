@@ -14,201 +14,201 @@ import com.metaio.sdk.jni.Vector3d;
 
 /**
  * This example shows how an AREL scene can be loaded and displayed
- * 
+ *
  * @author arsalan.malik
- * 
  */
 public class ARELActivity extends ARViewActivity {
 
-	/**
-	 * Intent extra key for the AREL scene file path. Append this to
-	 * getPackageName() when using.
-	 */
-	public static final String INTENT_EXTRA_AREL_SCENE = ".AREL_SCENE";
+    /**
+     * Intent extra key for the AREL scene file path. Append this to
+     * getPackageName() when using.
+     */
+    public static final String INTENT_EXTRA_AREL_SCENE = ".AREL_SCENE";
 
-	/**
-	 * Gesture handler
-	 */
-	protected GestureHandlerAndroid mGestureHandler;
-	/**
-	 * The WebView where we display the AREL HTML page and take care of
-	 * JavaScript
-	 */
-	protected WebView mWebView;
+    /**
+     * Gesture handler
+     */
+    protected GestureHandlerAndroid mGestureHandler;
+    /**
+     * The WebView where we display the AREL HTML page and take care of
+     * JavaScript
+     */
+    protected WebView mWebView;
 
-	/**
-	 * This class is the main interface to AREL
-	 */
-	protected ARELInterpreterAndroidJava mARELInterpreter;
+    /**
+     * This class is the main interface to AREL
+     */
+    protected ARELInterpreterAndroidJava mARELInterpreter;
 
-	/**
-	 * Default ARELInterpreter callback
-	 */
-	private IARELInterpreterCallback mARELCallback;
+    /**
+     * Default ARELInterpreter callback
+     */
+    private IARELInterpreterCallback mARELCallback;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		// create the AREL interpreter and its callback
-		mARELInterpreter = new ARELInterpreterAndroidJava();
-		IARELInterpreterCallback callback = getARELInterpreterCallback();
-		if (callback != null)
-			mARELInterpreter.registerCallback(callback);
-		else
-			MetaioDebug.log(Log.WARN, "No ARELInterpreterCallback registered!");
+        // create the AREL interpreter and its callback
+        mARELInterpreter = new ARELInterpreterAndroidJava();
+        IARELInterpreterCallback callback = getARELInterpreterCallback();
+        if (callback != null)
+            mARELInterpreter.registerCallback(callback);
+        else
+            MetaioDebug.log(Log.WARN, "No ARELInterpreterCallback registered!");
 
-		// create AREL WebView
-		mWebView = new WebView(this);
-	}
+        // create AREL WebView
+        mWebView = new WebView(this);
+    }
 
-	@Override
-	protected void onStart() {
-		super.onStart();
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-		addContentView(mWebView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+        addContentView(mWebView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 
-		// attach a WebView to the AREL interpreter and initialize it
-		mARELInterpreter.initWebView(mWebView, this);
-	}
+        // attach a WebView to the AREL interpreter and initialize it
+        mARELInterpreter.initWebView(mWebView, this);
+    }
 
-	@Override
-	protected void onResume() {
-		super.onResume();
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-		// Bring to front after resuming camera and GL surface
-		mWebView.bringToFront();
+        // Bring to front after resuming camera and GL surface
+        mWebView.bringToFront();
 
-		if (mGUIView != null)
-			mGUIView.bringToFront();
+        if (mGUIView != null)
+            mGUIView.bringToFront();
 
-		if ((mARELInterpreter != null) && (mRendererInitialized))
-			mARELInterpreter.onResume();
+        if ((mARELInterpreter != null) && (mRendererInitialized))
+            mARELInterpreter.onResume();
 
-		// Resume WebView timers
-		mWebView.resumeTimers();
-	}
+        // Resume WebView timers
+        mWebView.resumeTimers();
+    }
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-		if ((mARELInterpreter != null) && (mRendererInitialized))
-			mARELInterpreter.onPause();
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if ((mARELInterpreter != null) && (mRendererInitialized))
+            mARELInterpreter.onPause();
 
-		// Pause WebView timers
-		mWebView.pauseTimers();
-	}
+        // Pause WebView timers
+        mWebView.pauseTimers();
+    }
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
-		try {
-			mARELInterpreter.release();
-			mARELInterpreter.delete();
-			mARELInterpreter = null;
-			mARELCallback.delete();
-			mARELCallback = null;
-			mRendererInitialized = false;
-			mWebView.setOnTouchListener(null);
-			mWebView = null;
-			mGestureHandler.delete();
-			mGestureHandler = null;
-		} catch (Exception e) {
-			MetaioDebug.printStackTrace(Log.ERROR, e);
-		}
-	}
+        try {
+            mARELInterpreter.release();
+            mARELInterpreter.delete();
+            mARELInterpreter = null;
+            mARELCallback.delete();
+            mARELCallback = null;
+            mRendererInitialized = false;
+            mWebView.setOnTouchListener(null);
+            mWebView = null;
+            mGestureHandler.delete();
+            mGestureHandler = null;
+        } catch (Exception e) {
+            MetaioDebug.printStackTrace(Log.ERROR, e);
+        }
+    }
 
-	@Override
-	protected int getGUILayout() {
-		return 0;
-	}
+    @Override
+    protected int getGUILayout() {
+        return 0;
+    }
 
-	@Override
-	protected IMetaioSDKCallback getMetaioSDKCallbackHandler() {
-		return null;
-	}
+    @Override
+    protected IMetaioSDKCallback getMetaioSDKCallbackHandler() {
+        return null;
+    }
 
-	/**
-	 * Get AREL interpreter callback handler. Note that the default interpreter
-	 * calls {@link ARELActivity#loadARELScene()} in
-	 * {@link IMetaioSDKCallback#onSDKReady()} callback.
-	 * @return instance of class that implements IARELInterpreterCallback
-	 */
-	protected IARELInterpreterCallback getARELInterpreterCallback() {
-		mARELCallback = new ARELInterpreterCallback();
-		return mARELCallback;
-	}
+    /**
+     * Get AREL interpreter callback handler. Note that the default interpreter
+     * calls {@link ARELActivity#loadARELScene()} in
+     * {@link IMetaioSDKCallback#onSDKReady()} callback.
+     *
+     * @return instance of class that implements IARELInterpreterCallback
+     */
+    protected IARELInterpreterCallback getARELInterpreterCallback() {
+        mARELCallback = new ARELInterpreterCallback();
+        return mARELCallback;
+    }
 
-	@Override
-	public void onDrawFrame() {
+    @Override
+    public void onDrawFrame() {
 
-		// instead of metaioSDK.render, call ARELInterpreterAndroidJava.update()
-		if (mRendererInitialized)
-			mARELInterpreter.update();
-	}
+        // instead of metaioSDK.render, call ARELInterpreterAndroidJava.update()
+        if (mRendererInitialized)
+            mARELInterpreter.update();
+    }
 
-	@Override
-	public void onSurfaceCreated() {
-		super.onSurfaceCreated();
+    @Override
+    public void onSurfaceCreated() {
+        super.onSurfaceCreated();
 
-		if (mGestureHandler == null) {
-			// create gesture handler and initialize AREL interpreter
-			mGestureHandler = new GestureHandlerAndroid(metaioSDK, GestureHandler.GESTURE_ALL, mWebView, mSurfaceView);
-			mARELInterpreter.initialize(metaioSDK, mGestureHandler);
-		} else {
-			// Update reference to the GLSurfaceView
-			mGestureHandler.setGLSurfaceView(mSurfaceView);
-		}
-	}
+        if (mGestureHandler == null) {
+            // create gesture handler and initialize AREL interpreter
+            mGestureHandler = new GestureHandlerAndroid(metaioSDK, GestureHandler.GESTURE_ALL, mWebView, mSurfaceView);
+            mARELInterpreter.initialize(metaioSDK, mGestureHandler);
+        } else {
+            // Update reference to the GLSurfaceView
+            mGestureHandler.setGLSurfaceView(mSurfaceView);
+        }
+    }
 
-	@Override
-	public void onSurfaceChanged(int width, int height) {
-		super.onSurfaceChanged(width, height);
-		if (mRendererInitialized)
-			mARELInterpreter.onSurfaceChanged(width, height);
-	}
+    @Override
+    public void onSurfaceChanged(int width, int height) {
+        super.onSurfaceChanged(width, height);
+        if (mRendererInitialized)
+            mARELInterpreter.onSurfaceChanged(width, height);
+    }
 
-	@Override
-	protected void loadContents() {
-	}
+    @Override
+    protected void loadContents() {
+    }
 
-	/**
-	 * Load AREL scene
-	 */
-	protected void loadARELScene() {
-		runOnUiThread(new Runnable() {
+    /**
+     * Load AREL scene
+     */
+    protected void loadARELScene() {
+        runOnUiThread(new Runnable() {
 
-			@Override
-			public void run() {
+            @Override
+            public void run() {
 
-				final String filepath = getIntent().getStringExtra(getPackageName() + INTENT_EXTRA_AREL_SCENE);
-				if (filepath != null)
-					mARELInterpreter.loadARELFile(filepath);
-				else
-					MetaioDebug.log(Log.ERROR, "No AREL scene file passed to the intent");
+                final String filepath = getIntent().getStringExtra(getPackageName() + INTENT_EXTRA_AREL_SCENE);
+                if (filepath != null)
+                    mARELInterpreter.loadARELFile(filepath);
+                else
+                    MetaioDebug.log(Log.ERROR, "No AREL scene file passed to the intent");
 
-				// TODO: set custom radar properties
-				mARELInterpreter.setRadarProperties(IGeometry.ANCHOR_TL, new Vector3d(0f), new Vector3d(1f));
+                // TODO: set custom radar properties
+                mARELInterpreter.setRadarProperties(IGeometry.ANCHOR_TL, new Vector3d(0f), new Vector3d(1f));
 
-				// show AREL webview and start handling touch events
-				mWebView.setOnTouchListener(mGestureHandler);
+                // show AREL webview and start handling touch events
+                mWebView.setOnTouchListener(mGestureHandler);
 
-			}
-		});
+            }
+        });
 
-	}
+    }
 
-	@Override
-	protected void onGeometryTouched(final IGeometry geometry) {
-		MetaioDebug.log("MetaioSDKCallbackHandler.onGeometryTouched: " + geometry);
+    @Override
+    protected void onGeometryTouched(final IGeometry geometry) {
+        MetaioDebug.log("MetaioSDKCallbackHandler.onGeometryTouched: " + geometry);
 
-	}
+    }
 
-	class ARELInterpreterCallback extends IARELInterpreterCallback {
-		@Override
-		public void onSDKReady() {
-			loadARELScene();
-		}
-	}
+    class ARELInterpreterCallback extends IARELInterpreterCallback {
+        @Override
+        public void onSDKReady() {
+            loadARELScene();
+        }
+    }
 }

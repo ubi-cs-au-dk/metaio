@@ -2,7 +2,7 @@
     package="com.metaio.Example"
     android:installLocation="preferExternal"
     android:versionCode="5"
-    android:versionName="5.3" >
+    android:versionName="5.3">
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -25,13 +25,13 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:hardwareAccelerated="false"
             android:name="com.metaio.Example.MainActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:label="@string/app_name"
-            android:theme="@style/Theme.NoTitle" >
+            android:theme="@style/Theme.NoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,43 +41,35 @@
         <activity
             android:name=".TutorialHelloWorld"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialContentTypes"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialTrackingSamples"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialDynamicModels"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialLocationBasedAR"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialInstantTracking"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialInteractiveFurniture"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialVisualSearch"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
         <activity
             android:name=".TutorialDynamicLighting"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
@@ -93,12 +85,11 @@
         <activity
             android:name=".TutorialQRCodeReader"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" />        
+            android:theme="@style/Theme.FullScreen" />
         <activity
             android:name=".ARELViewActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:theme="@style/Theme.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.FullScreen"></activity>
     </application>
 
 </manifest>

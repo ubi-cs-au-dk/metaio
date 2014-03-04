@@ -10,19 +10,18 @@ import com.metaio.R;
 public class POIDetailDialog extends FragmentActivity
 
 {
-	POIDetailFragment mFragment;
+    POIDetailFragment mFragment;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.poiactivity);
-		mFragment =
-				(POIDetailFragment) getSupportFragmentManager().findFragmentById(
-						R.id.poidetailfragment);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.poiactivity);
+        mFragment =
+                (POIDetailFragment) getSupportFragmentManager().findFragmentById(
+                        R.id.poidetailfragment);
 //If we use ActionBarActivity or API > 11 we can setup an actionbar
 //		setupActionBar();
-	}
+    }
 
 //	protected void setupActionBar()
 //	{
@@ -43,14 +42,12 @@ public class POIDetailDialog extends FragmentActivity
 //		ab.setDisplayUseLogoEnabled(false);
 //	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		if (item.getItemId() == android.R.id.home)
-		{
-			setResult(RESULT_CANCELED);
-			finish();
-		}
-		return super.onOptionsItemSelected(item);
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            setResult(RESULT_CANCELED);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

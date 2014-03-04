@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
+    android:layout_height="match_parent"
     android:visibility="gone">
 
     <LinearLayout
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|top"
         android:visibility="gone"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/buttonTV"
@@ -30,8 +30,7 @@
             android:background="#0000"
             android:onClick="onChairButtonClick"
             android:scaleType="fitCenter"
-            android:src="@drawable/button_chair_unselected" >
-        </ImageButton>
+            android:src="@drawable/button_chair_unselected"></ImageButton>
 
         <ImageButton
             android:id="@+id/buttonMan"
@@ -41,8 +40,7 @@
             android:background="#0000"
             android:onClick="onManButtonClick"
             android:scaleType="fitCenter"
-            android:src="@drawable/button_man_unselected" >
-        </ImageButton>
+            android:src="@drawable/button_man_unselected"></ImageButton>
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +51,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button3"
@@ -75,8 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClearScreen"
-            android:text="Reset" >
-        </Button>
+            android:text="Reset"></Button>
     </LinearLayout>
 
     <ImageButton

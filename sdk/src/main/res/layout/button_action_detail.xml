@@ -7,5 +7,4 @@
     android:clickable="false"
     android:focusable="false"
     android:text="My Button"
-    android:textIsSelectable="false" >
-</TextView>
+    android:textIsSelectable="false"></TextView>

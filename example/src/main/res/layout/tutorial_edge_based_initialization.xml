@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="gone" >
+    android:visibility="gone">
 
     <ImageButton
         android:id="@+id/button1"
@@ -11,8 +11,8 @@
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
         android:onClick="onButtonClick"
-        android:src="@drawable/cancel" 
-        android:contentDescription="@+strings/btnClose"/>
+        android:src="@drawable/cancel"
+        android:contentDescription="@+strings/btnClose" />
 
     <LinearLayout
         android:id="@+id/buttonBar"
@@ -22,7 +22,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="10dp"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/resetButton"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
+    android:layout_height="match_parent">
+
     <ImageButton
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -10,7 +10,7 @@
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
         android:onClick="onButtonClick"
-        android:src="@drawable/cancel" 
-        android:contentDescription="@+strings/btnClose"/>
+        android:src="@drawable/cancel"
+        android:contentDescription="@+strings/btnClose" />
 
 </RelativeLayout>

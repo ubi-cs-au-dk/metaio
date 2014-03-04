@@ -11,21 +11,21 @@
                 <AutoInit>
                     <PresetType>off</PresetType>
                 </AutoInit>
-				<EdgeAlignment>
-					<!-- Edge-model of the object. It has to be in the same coordinate system of the <TriangleMesh> model, and perfectly aligned with it. Obj file containing only vertices and lines. Model scale has to be in [mm]. -->
-					<LineModel>LineModel.obj</LineModel>
-					<!-- Minimum quality threshold. It has to be between 0 and 1. Advisable values are between 0.6 and 0.75. Default = 0.65. -->
-					<MinQuality>0.9</MinQuality>
-					<!-- Max. search range length. It should be adapted relative to the model size. This value is set in [mm]. It has to be greater than 0. -->
-					<SearchRange>50</SearchRange>
-					<!-- Number of features to be used. This parameter directly influences sensor response. More features will induce higher accuracy, with the lower framerate, and vice-versa. The lower bound for this parameter is 30. Ideally it should be no less than 100, in case a target device can handle a computational cost. -->
-					<NumFeatures>250</NumFeatures>
-					<!-- Visibility testing parameters -->
-					<VisibilityTest>
-						<Enabled>false</Enabled>
-						<TestRate>0.2</TestRate>
-					</VisibilityTest>
-				</EdgeAlignment>
+                <EdgeAlignment>
+                    <!-- Edge-model of the object. It has to be in the same coordinate system of the <TriangleMesh> model, and perfectly aligned with it. Obj file containing only vertices and lines. Model scale has to be in [mm]. -->
+                    <LineModel>LineModel.obj</LineModel>
+                    <!-- Minimum quality threshold. It has to be between 0 and 1. Advisable values are between 0.6 and 0.75. Default = 0.65. -->
+                    <MinQuality>0.9</MinQuality>
+                    <!-- Max. search range length. It should be adapted relative to the model size. This value is set in [mm]. It has to be greater than 0. -->
+                    <SearchRange>50</SearchRange>
+                    <!-- Number of features to be used. This parameter directly influences sensor response. More features will induce higher accuracy, with the lower framerate, and vice-versa. The lower bound for this parameter is 30. Ideally it should be no less than 100, in case a target device can handle a computational cost. -->
+                    <NumFeatures>250</NumFeatures>
+                    <!-- Visibility testing parameters -->
+                    <VisibilityTest>
+                        <Enabled>false</Enabled>
+                        <TestRate>0.2</TestRate>
+                    </VisibilityTest>
+                </EdgeAlignment>
                 <FeatureTracking>
                     <Parameters>
                         <NumExtensibleFeatures>3000</NumExtensibleFeatures>

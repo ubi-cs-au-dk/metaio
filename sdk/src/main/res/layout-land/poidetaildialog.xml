@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:orientation="horizontal"
-    android:padding="8dp" >
+    android:padding="8dp">
+
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="1">
         <!-- Thumbnail Image -->
         <com.metaio.cloud.plugin.view.RemoteImageView
             android:id="@+id/imagePOIThumbnail"
@@ -21,6 +22,7 @@
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/icon_placeholder" />
+
         <com.metaio.cloud.plugin.view.ScalableTextView
             android:id="@+id/textPOIName"
             android:layout_width="fill_parent"
@@ -46,6 +48,7 @@
             android:minHeight="25dip"
             android:numStars="5"
             android:progressDrawable="@drawable/rating_drawable" />
+
         <TextView
             android:id="@+id/textPOILocation"
             style="@android:style/TextAppearance.Small"
@@ -56,6 +59,7 @@
             android:layout_toRightOf="@id/imagePOIThumbnail"
             android:gravity="center_vertical"
             android:singleLine="true" />
+
         <com.metaio.cloud.plugin.view.RemoteImageView
             android:id="@+id/imageAttribution"
             android:layout_width="16dp"
@@ -74,8 +78,7 @@
             android:layout_marginLeft="2dp"
             android:gravity="start"
             android:scrollbars="vertical"
-            android:textAppearance="@android:style/TextAppearance.Medium" >
-        </TextView>
+            android:textAppearance="@android:style/TextAppearance.Medium"></TextView>
     </RelativeLayout>
     <!-- Action Buttons -->
     <ListView
@@ -83,6 +86,5 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="8dp"
-        android:layout_weight="1" >
-    </ListView>
+        android:layout_weight="1"></ListView>
 </LinearLayout>

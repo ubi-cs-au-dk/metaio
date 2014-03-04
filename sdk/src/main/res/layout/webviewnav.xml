@@ -3,7 +3,7 @@
     android:id="@+id/root"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
     <!-- Web View -->
     <WebView
         android:id="@+id/webView"
@@ -11,6 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#FFFFFFFF" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="@android:style/Widget.ProgressBar.Horizontal"
@@ -19,12 +20,13 @@
         android:indeterminateBehavior="repeat"
         android:indeterminateOnly="false"
         android:visibility="visible" />
+
     <LinearLayout
         android:id="@+id/webBottomBar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_nav"
-        android:visibility="visible" >
+        android:visibility="visible">
         <!-- Navigation Buttons -->
         <ImageButton
             android:id="@+id/buttonShare"
@@ -37,6 +39,7 @@
             android:background="@drawable/btn_nav_bg_selector"
             android:onClick="onButtonClickHandler"
             android:src="@drawable/button_web_share" />
+
         <ImageButton
             android:id="@+id/buttonWebBack"
             android:layout_width="0dp"
@@ -48,6 +51,7 @@
             android:background="@drawable/btn_nav_bg_selector"
             android:onClick="onButtonClickHandler"
             android:src="@drawable/button_web_back" />
+
         <ImageButton
             android:id="@+id/buttonWebStop"
             android:layout_width="0dp"
@@ -60,6 +64,7 @@
             android:onClick="onButtonClickHandler"
             android:src="@drawable/button_web_stop"
             android:visibility="gone" />
+
         <ImageButton
             android:id="@+id/buttonWebReload"
             android:layout_width="0dp"
@@ -70,6 +75,7 @@
             android:background="@drawable/btn_nav_bg_selector"
             android:onClick="onButtonClickHandler"
             android:src="@drawable/button_web_reload" />
+
         <ImageButton
             android:id="@+id/buttonWebForward"
             android:layout_width="0dp"

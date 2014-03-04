@@ -3,10 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
+
         <ImageButton
             android:id="@+id/buttonClose"
             android:layout_width="40dp"
@@ -16,10 +18,10 @@
             android:background="@drawable/btn_nav_bg_selector"
             android:src="@drawable/button_web_close" />
     </FrameLayout>
+
     <FrameLayout
         android:id="@+id/html5viewcontainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
-    </FrameLayout>
+        android:layout_weight="1"></FrameLayout>
 </LinearLayout>

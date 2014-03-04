@@ -13,165 +13,143 @@ import com.metaio.sdk.jni.IMetaioSDKCallback;
 import com.metaio.sdk.jni.TrackingValuesVector;
 import com.metaio.tools.io.AssetsManager;
 
-public class TutorialEdgeBasedInitialization extends ARViewActivity 
-{
+public class TutorialEdgeBasedInitialization extends ARViewActivity {
 
-	private enum EState
-	{
-		INITIALIZATION,
-		TRACKING
-	};
-	
-	EState mState = EState.INITIALIZATION;
-	
-	/**
-	 * Geometry
-	 */
-	private IGeometry mModel = null;
-	private IGeometry mVizAidModel = null;
+    private enum EState {
+        INITIALIZATION,
+        TRACKING
+    }
 
-	
-	/**
-	 * metaio SDK callback handler
-	 */
-	private MetaioSDKCallbackHandler mCallbackHandler;	
+    ;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) 
-	{
-		super.onCreate(savedInstanceState);
-		
-		mCallbackHandler = new MetaioSDKCallbackHandler();
-	}
+    EState mState = EState.INITIALIZATION;
 
-	@Override
-	protected void onDestroy() 
-	{
-		super.onDestroy();
-		mCallbackHandler.delete();
-		mCallbackHandler = null;
-	}
+    /**
+     * Geometry
+     */
+    private IGeometry mModel = null;
+    private IGeometry mVizAidModel = null;
 
-	@Override
-	protected IMetaioSDKCallback getMetaioSDKCallbackHandler()
-	{
-		return mCallbackHandler;
-	}
 
-	public void onButtonClick(View v)
-	{
-		finish();
-	}
-	
-	public void onResetButtonClick(View v)
-	{
-		loadTrackingConfig();
-	}
+    /**
+     * metaio SDK callback handler
+     */
+    private MetaioSDKCallbackHandler mCallbackHandler;
 
-	@Override
-	protected void loadContents() 
-	{
-		mModel = loadModel("TutorialEdgeBasedInitialization/Assets/Custom/rim.obj");
-		mVizAidModel = loadModel("TutorialEdgeBasedInitialization/Assets/Custom/VizAid.obj");
-		
-		String envmapPath = AssetsManager.getAssetPath(getApplicationContext(), "TutorialEdgeBasedInitialization/Assets/Custom/env_map.zip");	
-		metaioSDK.loadEnvironmentMap(envmapPath);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		if (mModel != null)
-			mModel.setCoordinateSystemID(1);
-		
-		if (mVizAidModel != null)
-			mVizAidModel.setCoordinateSystemID(2);
-		
-		loadTrackingConfig();
-	}
-	
-	void loadTrackingConfig()
-	{
-		boolean result = setTrackingConfiguration("TutorialEdgeBasedInitialization/Assets/Custom/rim_tracking/Tracking.xml");
-		
-		if(!result)
-			MetaioDebug.log(Log.ERROR, "Failed to load tracking configuration.");
+        mCallbackHandler = new MetaioSDKCallbackHandler();
+    }
 
-		mState = EState.INITIALIZATION;
-	}
-	
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mCallbackHandler.delete();
+        mCallbackHandler = null;
+    }
 
-	final class MetaioSDKCallbackHandler extends IMetaioSDKCallback
-	{
-	
-		@Override
-		public void onSDKReady() 
-		{
-			// show GUI
-			runOnUiThread(new Runnable() 
-			{
-				@Override
-				public void run() 
-				{
-					mGUIView.setVisibility(View.VISIBLE);
-				}
-			});
-		}
-		
+    @Override
+    protected IMetaioSDKCallback getMetaioSDKCallbackHandler() {
+        return mCallbackHandler;
+    }
 
-		@Override
-		public void onTrackingEvent(TrackingValuesVector trackingValues) {
-			if (trackingValues.size() > 0 &&
-					trackingValues.get(0).getState() == ETRACKING_STATE.ETS_REGISTERED)
-			{
-				mState = EState.TRACKING;
-			}
-		}
-	}
-	
-	public IGeometry loadModel(final String path)
-	{
-		IGeometry geometry = null;
-		try
-		{
-			// Load model
-			String modelPath = AssetsManager.getAssetPath(getApplicationContext(), path);			
-			geometry = metaioSDK.createGeometry(modelPath);
-			
-			MetaioDebug.log("Loaded geometry "+modelPath);			
-		}       
-		catch (Exception e)
-		{
-			MetaioDebug.log(Log.ERROR, "Error loading geometry: "+e.getMessage());
-			return geometry;
-		}		
-		return geometry;
-	}
-	
-	public boolean setTrackingConfiguration(final String path)
-	{
-		boolean result = false;
-		try
-		{
-			// set tracking configuration
-			String xmlPath = AssetsManager.getAssetPath(getApplicationContext(), path);			
-			result = metaioSDK.setTrackingConfiguration(xmlPath);
-			MetaioDebug.log("Loaded tracking configuration "+xmlPath);			
-		}       
-		catch (Exception e)
-		{
-			MetaioDebug.log(Log.ERROR, "Error loading tracking configuration: "+ path + " " +e.getMessage());
-			return result;
-		}		
-		return result;
-	}
+    public void onButtonClick(View v) {
+        finish();
+    }
 
-	@Override
-	protected int getGUILayout()
-	{
-		return R.layout.tutorial_edge_based_initialization; 
-	}
+    public void onResetButtonClick(View v) {
+        loadTrackingConfig();
+    }
 
-	@Override
-	protected void onGeometryTouched(IGeometry geometry) 
-	{
-		
-	}
-	
+    @Override
+    protected void loadContents() {
+        mModel = loadModel("TutorialEdgeBasedInitialization/Assets/Custom/rim.obj");
+        mVizAidModel = loadModel("TutorialEdgeBasedInitialization/Assets/Custom/VizAid.obj");
+
+        String envmapPath = AssetsManager.getAssetPath(getApplicationContext(), "TutorialEdgeBasedInitialization/Assets/Custom/env_map.zip");
+        metaioSDK.loadEnvironmentMap(envmapPath);
+
+        if (mModel != null)
+            mModel.setCoordinateSystemID(1);
+
+        if (mVizAidModel != null)
+            mVizAidModel.setCoordinateSystemID(2);
+
+        loadTrackingConfig();
+    }
+
+    void loadTrackingConfig() {
+        boolean result = setTrackingConfiguration("TutorialEdgeBasedInitialization/Assets/Custom/rim_tracking/Tracking.xml");
+
+        if (!result)
+            MetaioDebug.log(Log.ERROR, "Failed to load tracking configuration.");
+
+        mState = EState.INITIALIZATION;
+    }
+
+
+    final class MetaioSDKCallbackHandler extends IMetaioSDKCallback {
+
+        @Override
+        public void onSDKReady() {
+            // show GUI
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mGUIView.setVisibility(View.VISIBLE);
+                }
+            });
+        }
+
+
+        @Override
+        public void onTrackingEvent(TrackingValuesVector trackingValues) {
+            if (trackingValues.size() > 0 &&
+                    trackingValues.get(0).getState() == ETRACKING_STATE.ETS_REGISTERED) {
+                mState = EState.TRACKING;
+            }
+        }
+    }
+
+    public IGeometry loadModel(final String path) {
+        IGeometry geometry = null;
+        try {
+            // Load model
+            String modelPath = AssetsManager.getAssetPath(getApplicationContext(), path);
+            geometry = metaioSDK.createGeometry(modelPath);
+
+            MetaioDebug.log("Loaded geometry " + modelPath);
+        } catch (Exception e) {
+            MetaioDebug.log(Log.ERROR, "Error loading geometry: " + e.getMessage());
+            return geometry;
+        }
+        return geometry;
+    }
+
+    public boolean setTrackingConfiguration(final String path) {
+        boolean result = false;
+        try {
+            // set tracking configuration
+            String xmlPath = AssetsManager.getAssetPath(getApplicationContext(), path);
+            result = metaioSDK.setTrackingConfiguration(xmlPath);
+            MetaioDebug.log("Loaded tracking configuration " + xmlPath);
+        } catch (Exception e) {
+            MetaioDebug.log(Log.ERROR, "Error loading tracking configuration: " + path + " " + e.getMessage());
+            return result;
+        }
+        return result;
+    }
+
+    @Override
+    protected int getGUILayout() {
+        return R.layout.tutorial_edge_based_initialization;
+    }
+
+    @Override
+    protected void onGeometryTouched(IGeometry geometry) {
+
+    }
+
 }
